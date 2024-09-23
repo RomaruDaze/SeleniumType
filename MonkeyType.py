@@ -26,9 +26,10 @@ touch = WebDriverWait(driver, 10).until(
 touch.click()
 
 login = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/header/nav/button[3]'))
+    EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/header/nav/a[4]'))
 )
 login.click()
+
 
 github = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.XPATH, '//*[@id="pageLogin"]/div[4]/div[2]/button[2]'))
@@ -43,7 +44,6 @@ driver.switch_to.window(driver.window_handles[-1])
 WebDriverWait(driver, 20).until(
     EC.presence_of_element_located((By.TAG_NAME, 'body'))
 )
-print("Switched to GitHub login window")
 
 login_input = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.ID, 'login_field'))
