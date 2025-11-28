@@ -9,7 +9,6 @@ This project automates the process of logging into Monkeytype using GitHub crede
 Before you begin, ensure you have the following installed:
 
 - Python 3.x
-- ChromeDriver (download and place in the specified directory)
 - Google Chrome Browser
 
 ## Installation
@@ -24,7 +23,12 @@ Before you begin, ensure you have the following installed:
 2. **Install Required Python Packages**
 
    ```sh
-   pip install selenium python-dotenv
+   pip install -r requirements.txt
+   ```
+
+   Or install manually:
+   ```sh
+   pip install selenium python-dotenv webdriver-manager
    ```
 
 3. **Set Up Environment Variables**
@@ -36,16 +40,16 @@ Before you begin, ensure you have the following installed:
    LOGIN_PASSWORD=your_github_password
    ```
 
-4. **Download ChromeDriver**
+4. **ChromeDriver Management**
 
-   Download the appropriate version of ChromeDriver from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads) and place it in the `./cd` directory.
+   ChromeDriver is automatically downloaded and managed by `webdriver-manager`. No manual installation is required. The correct version matching your Chrome browser will be automatically selected.
 
 ## Usage
 
 1. **Run the Script**
 
    ```sh
-   python main.py
+   python3 MonkeyType.py
    ```
 
    This script will:
@@ -62,13 +66,13 @@ Before you begin, ensure you have the following installed:
 
 ## Notes
 
-- Ensure that the ChromeDriver version matches your installed Google Chrome version.
+- ChromeDriver is automatically managed and will match your installed Google Chrome version.
 - The `.env` file should be kept secure and not shared with others, as it contains your GitHub credentials.
 
 ## Troubleshooting
 
 - **Element Not Found**: If the script fails to find an element, it might be due to changes in the Monkeytype website. Check the XPath or selectors used in the script.
-- **ChromeDriver Compatibility**: Ensure your ChromeDriver version is compatible with your installed Chrome browser.
+- **ChromeDriver Compatibility**: ChromeDriver is automatically managed by `webdriver-manager` and should always match your Chrome version. If you encounter issues, try updating Chrome or reinstalling dependencies.
 
 ## License
 
